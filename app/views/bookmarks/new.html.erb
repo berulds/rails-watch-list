@@ -1,7 +1,16 @@
 <h1>Create a new Bookmark</h1>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie, input_html: { data: { controller: 'select2' }, class: 'form-control'} %>
+  <%= f.association :movie, collection: Movie.all, input_html: { multiple: true, class: "multiple-select" } %>
   <%= f.input :comment %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+
+
+
+<%
+=begin%>
+ input_html: { data: { controller: 'select2' }, class: 'form-control'}
+<%
+=end%>
