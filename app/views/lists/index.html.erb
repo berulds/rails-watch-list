@@ -1,11 +1,24 @@
-<h1>All Lists</h1>
+<div class="container">
+  <h1>All Lists</h1>
 
-<%= cl_image_tag("r45gcct5ns4bibemqjng", width: 400, height: 300, crop: :fill) %>
+  <div class="lists-container">
+    <% @lists.each do |list| %>
+      <div>
+        <div>
+          <div>
+            <div class="row">
+              <div class="col-lg-6">
+                <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+              </div>
+              <div class="col-lg-6">
+                <h3><%= link_to list.name, list_path(list) %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list)%></li>
-  <% end %>
-</ul>
-
-<%= link_to "Create a list", new_list_path(@list), class: "btn btn-primary" %>
+  <%= link_to "Create a list", new_list_path(@list), class: "btn btn-primary" %>
+</div>
