@@ -6,7 +6,7 @@
       <div>
         <div class="row">
           <div class="col-lg-6">
-            <%= cl_image_tag @list.photo.key, height: 200, width: 400, crop: :fill %>
+            <%= cl_image_tag list.photo.key, height: 200, width: 400, crop: :fill %>
           </div>
           <div class="col-lg-6">
             <h3><%= link_to list.name, list_path(list) %></h3>
